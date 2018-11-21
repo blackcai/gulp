@@ -1,37 +1,10 @@
-# gulp
+基于node.js
+gulp官网：https://www.gulpjs.com.cn/
+gulp
+全局安装gulp
+npm install -g gulp
+运行
+gulp
 
-#### 项目介绍
-一个gulp文件，无需更多配置，开箱即用。
-
-#### 软件架构
-软件架构说明
-
-
-#### 安装教程
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 使用说明
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 参与贡献
-
-1. Fork 本项目
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
-
-
-#### 码云特技
-
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+除了gulpfile.js以外还有一些demo供参考，都是基于以前一些项目拿出来的，为了避免一些尴尬，比如：
+以前找资料，很多时候就是一个完整的demo，也没有其他的可以对比，很苦恼，因为可能和项目对不上，或者根本没有经过验证就拿出来，而且还也没有其他可以参考的内容（可能找上很久也能在某个角落找到，我相信大部分人都有这种经历）。毕竟百度十个答案九个自称原创还有一个不知所云。
