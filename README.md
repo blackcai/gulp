@@ -1,9 +1,15 @@
 基于node.js
+
 gulp官网：https://www.gulpjs.com.cn/
+
 gulp
+
 全局安装gulp
+
 npm install -g gulp
+
 运行
+
 gulp
 
 除了gulpfile.js以外还有一些demo供参考，都是基于以前一些项目拿出来的，为了避免一些尴尬，比如：
