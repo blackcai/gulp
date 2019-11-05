@@ -1,5 +1,5 @@
  var gulp = require('gulp'),
-    babel = require('gulp-babel')
+    babel = require('gulp-babel'),
     browserSync = require('browser-sync').create(),
     JScriptPath = ['./www/**/*.js','!./www/**/*.min.js'],
     htmlPath = './www/**/*.html',
