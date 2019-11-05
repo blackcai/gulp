@@ -18,7 +18,14 @@ gulp.task('server', () => {
   connect.server({
     root: './src', // 启动的根目录
     port: 3000, // 端口
-    livereload: true, // 即时刷新
+    host: '127.0.0.1', // 运行时的 host
+    name: 'Server', // 启动或者停止服务的时候输出的名字
+    https: false, // 当 https 开启的时候，可以使用node文档中的任何一个参数，然后在内部使用一些默认的参数
+    livereload: { // 是否即时刷新，可以直接设置为true
+      port: 3000,
+      hostname: '127.0.0.1'
+    },
+    fallback: '',
     middleware: (connect, opt) => {
       /*
       * 简单的反向代理，具体请查看 http-proxy-middleware 插件说明文档
@@ -32,7 +39,9 @@ gulp.task('server', () => {
           changeOrigin: true
         })
       ]
-    }
+    },
+    debug: false,
+    index: true
   })
 })
 

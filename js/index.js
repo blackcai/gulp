@@ -1,4 +1,4 @@
 const start = () => {
-  console.log('is  start')
+  console.log('is ss start')
 }
 start()
