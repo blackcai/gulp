@@ -4,7 +4,8 @@ const gulp = require('gulp'),
       proxy = require('http-proxy-middleware'),
       buildSass = require('gulp-sass'),
       uglify = require('gulp-uglify'),
-      rename = require('gulp-rename')
+      rename = require('gulp-rename'),
+      util = require('gulp-util')
 
 // 文件目录位置
 const javascript = './js/**/*.js',
@@ -41,16 +42,16 @@ gulp.task('html', () => {
 })
 
 // javascript
-// 具体的说明请自行参考 gulp-uglify gulp-rename
+// 具体的说明请自行参考 gulp-babel gulp-uglify gulp-rename gulp-util
 gulp.task('javascript', () => {
   gulp.src(javascript)
-    // .pipe(uglify({
-    //     mangle: {except: ['require', 'exports', 'module', '$']},//是否修改变量名，备注，全局函数混淆。
-    //     compress: true,//是否完全压缩
-    //     preserveComments: 'all'//保留注释"all"
-    // }))
-    // .pipe(rename({suffix: '.min'}))
-    .pipe(babel())
+    .pipe(babel()) // 转换为es-2015
+    .pipe(gulp.dest('./src/js')) // 在压缩前先保存一个未压缩的文件
+    .pipe(uglify()) // 压缩
+    .pipe(rename({suffix: '.min'})) // 重命名
+    .on('error', function (err) { // 错误打印
+      util.log(util.colors.red('[Error]'), err.toString());
+    })
     .pipe(gulp.dest('./src/js'))
     .pipe(connect.reload())
 })
@@ -60,7 +61,7 @@ gulp.task('css', () => {
   gulp.src(css).pipe(connect.reload())
 })
 
-// 个人喜欢用sass，根据自身情况使用
+// 根据自身情况使用
 gulp.task('sass', () => {
   gulp.src(sass)
   .pipe(buildSass())
@@ -75,5 +76,6 @@ gulp.task('watch', () => {
   gulp.watch(css, ['css'])
   gulp.watch(sass, ['sass'])
 })
+
 // 默认启动，default为必须的task，可以直接将server中的内容放置其中，形成一个简单的服务
 gulp.task('default', ['server', 'watch'])
